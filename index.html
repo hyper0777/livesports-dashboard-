@@ -384,6 +384,20 @@ w.setAttribute("data-sport",sport)
 
 ////////////////////////////
 CHART.JS MATCH STATS
+new Chart(document.getElementById("possessionChart"),{
+type:'pie',
+data:{
+labels:["Home","Away"],
+datasets:[{
+data:[60,40]
+}]
+},
+options:{
+plugins:{
+legend:{labels:{color:"white"}}
+}
+}
+})
 ////////////////////////////
 
 const ctx=document.getElementById("statsChart")
@@ -419,6 +433,21 @@ y:{ticks:{color:"white"}}
 
 ////////////////////////////
 LEAGUE FILTER DEMO
+let ticker=document.getElementById("liveTicker")
+
+let matches=[
+"Arsenal 2 - 1 Chelsea 🔴LIVE",
+"Barcelona 1 - 0 Madrid 🔴LIVE",
+"Bayern 3 - 2 Dortmund 🔴LIVE",
+"Inter 0 - 0 Milan",
+"PSG 4 - 1 Lyon 🔴LIVE"
+]
+
+matches.forEach(m=>{
+let item=document.createElement("div")
+item.innerHTML=`<span class="score-highlight">${m}</span>`
+ticker.appendChild(item)
+})  
 ////////////////////////////
 
 let leagues=[
